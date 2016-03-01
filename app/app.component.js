@@ -22,13 +22,13 @@ System.register(['angular2/core', "./service/article.service"], function(exports
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_newsService) {
-                    this._newsService = _newsService;
+                function AppComponent(_articleService) {
+                    this._articleService = _articleService;
                 }
                 ;
                 AppComponent.prototype.getNews = function () {
                     var _this = this;
-                    this._newsService.getArticles().then(function (articles) { return _this.articles = articles; });
+                    this._articleService.getArticles().then(function (articles) { return _this.articles = articles; });
                 };
                 AppComponent.prototype.ngOnInit = function () {
                     this.getNews();
