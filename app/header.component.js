@@ -23,7 +23,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 Header = __decorate([
                     core_1.Component({
-                        selector: "header",
+                        selector: "header-block",
                         templateUrl: 'app/layout/header.html'
                     }), 
                     __metadata('design:paramtypes', [])
