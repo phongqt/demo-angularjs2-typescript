@@ -1,30 +1,3 @@
 <header-block></header-block>
-  <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview" *ngFor="#article of articles">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            {{article.title}}
-                        </h2>
-                        <h3 class="post-subtitle">
-                            {{article.description}}
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on {{article.created}}</p>
-                </div>
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <hr>
- 
-    <!--End main-->
-   <footer-block></footer-block>
+<router-outlet></router-outlet> 
+<footer-block></footer-block>

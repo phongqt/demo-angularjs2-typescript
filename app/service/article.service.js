@@ -27,6 +27,11 @@ System.register(['./mock-article', 'angular2/core'], function(exports_1, context
                 ArticleService.prototype.getArticles = function () {
                     return Promise.resolve(mock_article_1.Articles);
                 };
+                ArticleService.prototype.getArticleDetail = function (id) {
+                    //   var element = Articles.map(function(x) {return x.id; }).indexOf(id);
+                    //   return Articles[element];
+                    return Promise.resolve(mock_article_1.Articles).then(function (Article) { return mock_article_1.Articles.filter(function (Article) { return Article.id === id; })[0]; });
+                };
                 ArticleService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

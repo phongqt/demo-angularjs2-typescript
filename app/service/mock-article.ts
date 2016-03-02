@@ -1,4 +1,4 @@
-import {Article} from '../article';
+import {Article} from '../interface/article';
 export var Articles : Article[] = [{
   "id": 1,
   "title": "sit amet nunc viverra dapibus nulla suscipit ligula in lacus",
