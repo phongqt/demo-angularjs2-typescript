@@ -1,4 +1,4 @@
-System.register(["angular2/core", 'angular2/router', "./home.component", "./article-detail.component", "./header.component", "./footer.component"], function(exports_1, context_1) {
+System.register(["angular2/core", 'angular2/router', "./home.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", 'angular2/router', "./home.component", "./arti
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_component_1, article_detail_component_1, header_component_1, footer_component_1;
+    var core_1, router_1, home_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,15 +22,6 @@ System.register(["angular2/core", 'angular2/router', "./home.component", "./arti
             },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
-            },
-            function (article_detail_component_1_1) {
-                article_detail_component_1 = article_detail_component_1_1;
-            },
-            function (header_component_1_1) {
-                header_component_1 = header_component_1_1;
-            },
-            function (footer_component_1_1) {
-                footer_component_1 = footer_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -40,22 +31,17 @@ System.register(["angular2/core", 'angular2/router', "./home.component", "./arti
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/layout/main.html',
-                        directives: [router_1.ROUTER_DIRECTIVES, header_component_1.Header, footer_component_1.Footer],
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             router_1.ROUTER_PROVIDERS
                         ]
                     }),
                     router_1.RouteConfig([
                         {
-                            path: '/',
+                            path: '/...',
                             name: 'Home',
                             component: home_component_1.HomeComponent,
                             useAsDefault: true
-                        },
-                        {
-                            path: '/article/detail/:id',
-                            name: 'ArticleDetail',
-                            component: article_detail_component_1.ArticleDetailComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

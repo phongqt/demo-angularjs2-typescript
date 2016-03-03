@@ -24,8 +24,19 @@ System.register(['./mock-article', 'angular2/core'], function(exports_1, context
             ArticleService = (function () {
                 function ArticleService() {
                 }
-                ArticleService.prototype.getArticles = function () {
-                    return Promise.resolve(mock_article_1.Articles);
+                ArticleService.prototype.getArticles = function (page, limit) {
+                    return Promise.resolve(mock_article_1.Articles).then(function (res) {
+                        var list = [];
+                        res = res.sort(function (x) { return x.id; });
+                        for (var i = ((page - 1) * limit); i < res.length; i++) {
+                            list.push(res[i]);
+                            if (i == (limit - 1)) {
+                                break;
+                            }
+                        }
+                        return list;
+                    });
+                    //return Promise.resolve(Articles);
                 };
                 ArticleService.prototype.getArticleDetail = function (id) {
                     //   var element = Articles.map(function(x) {return x.id; }).indexOf(id);
