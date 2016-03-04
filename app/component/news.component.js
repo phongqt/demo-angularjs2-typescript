@@ -28,18 +28,29 @@ System.register(["angular2/core", "../service/article.service", 'angular2/router
                 function NewsComponent(_articleService, _router) {
                     this._articleService = _articleService;
                     this._router = _router;
-                    this.page = 0;
+                    this.page = 1;
                     this.limit = 5;
-                    this.isDisabled = false;
+                    this.isDisabledPrevious = true;
+                    this.isDisabledNext = false;
                 }
                 ;
                 NewsComponent.prototype.getNews = function () {
                     var _this = this;
-                    this.page++;
-                    this.isDisabled = this.page * this.limit >= 10;
                     this._articleService.getArticles(this.page, this.limit).then(function (articles) { return _this.articles = articles; });
                 };
                 NewsComponent.prototype.ngOnInit = function () {
+                    this.getNews();
+                };
+                NewsComponent.prototype.gotoNext = function () {
+                    this.isDisabledPrevious = false;
+                    this.page++;
+                    this.isDisabledNext = this.page * this.limit >= 10;
+                    this.getNews();
+                };
+                NewsComponent.prototype.gotoPrevious = function () {
+                    this.page--;
+                    this.isDisabledPrevious = this.page == 1;
+                    this.isDisabledNext = false;
                     this.getNews();
                 };
                 NewsComponent.prototype.gotoArticleDetail = function (article) {

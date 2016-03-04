@@ -1,4 +1,4 @@
-System.register(["angular2/core", 'angular2/router', './news.component', "./article-detail.component", "./header.component", "./footer.component", './about.component'], function(exports_1, context_1) {
+System.register(["angular2/core", 'angular2/router', './news.component', "./article-detail.component", "./header.component", "./footer.component", './about.component', './contact.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", 'angular2/router', './news.component', "./arti
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, news_component_1, article_detail_component_1, header_component_1, footer_component_1, about_component_1;
+    var core_1, router_1, news_component_1, article_detail_component_1, header_component_1, footer_component_1, about_component_1, contact_component_1;
     var HomeComponent;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(["angular2/core", 'angular2/router', './news.component', "./arti
             },
             function (about_component_1_1) {
                 about_component_1 = about_component_1_1;
+            },
+            function (contact_component_1_1) {
+                contact_component_1 = contact_component_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -60,6 +63,11 @@ System.register(["angular2/core", 'angular2/router', './news.component', "./arti
                             path: '/about',
                             name: 'About',
                             component: about_component_1.AboutComponent
+                        },
+                        {
+                            path: '/contact',
+                            name: 'Contact',
+                            component: contact_component_1.ContactComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

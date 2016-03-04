@@ -32,8 +32,11 @@
             <hr>
             <!-- Pager -->
             <ul class="pager">
-                <li class="next" *ngIf="!isDisabled">
-                    <a (click)="getNews()" href="javascript:void(0)">Older Posts &rarr;</a>
+                <li class="previous" *ngIf="!isDisabledPrevious">
+                    <a (click)="gotoPrevious()" href="javascript:void(0)">&larr; New Posts</a>
+                </li>
+                <li class="next" *ngIf="!isDisabledNext">
+                    <a (click)="gotoNext()" href="javascript:void(0)">Older Posts &rarr;</a>
                 </li>
             </ul>
         </div>

@@ -5,9 +5,11 @@ import {ArticleDetailComponent} from "./article-detail.component";
 import {Header} from "./header.component";
 import {Footer} from "./footer.component";
 import {AboutComponent} from './about.component';
+import {ContactComponent} from './contact.component';
 @Component({
     templateUrl: 'app/layout/home.html',
     directives: [ Header, Footer,NewsComponent, RouterOutlet, ROUTER_DIRECTIVES],
+    // styleUrls: ['/bootstrap.min.css']
 })
 @RouteConfig([
     {
@@ -25,6 +27,11 @@ import {AboutComponent} from './about.component';
         path: '/about',
         name: 'About',
         component: AboutComponent
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        component: ContactComponent
     }
     
 ])
