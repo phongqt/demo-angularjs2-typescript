@@ -1,11 +1,16 @@
 import {Component, OnInit} from "angular2/core";
-import {Article} from "../interface/article"
-import {RouteParams} from "angular2/router"
-import {ArticleService} from "../service/article.service"
+import {Article} from "../interfaces/article";
+import {RouteParams} from "angular2/router";
+import {ArticleService} from "../services/article.service";
+import {TruncatePipe} from '../pipes/truncate.pipe';
+import {CapitalizeFirstLetterPipe} from '../pipes/capitalize-first-letter.pipe';
+import {CapitalizePipe} from '../pipes/capitalize.pipe';
+
 @Component({
     selector:"article-detail",
     templateUrl: "app/layout/article-detail.html",
-    providers: [ArticleService]
+    providers: [ArticleService],
+    pipes: [TruncatePipe, CapitalizeFirstLetterPipe, CapitalizePipe]
 })
  export class ArticleDetailComponent implements OnInit{
      article: Article;

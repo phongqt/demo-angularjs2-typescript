@@ -1,11 +1,15 @@
 import {Component, OnInit} from "angular2/core";
-import {ArticleService} from "../service/article.service";
+import {ArticleService} from "../services/article.service";
 import {Router} from 'angular2/router';
-import {Article} from "../interface/article";
+import {Article} from "../interfaces/article";
+import {TruncatePipe} from '../pipes/truncate.pipe';
+import {CapitalizeFirstLetterPipe} from '../pipes/capitalize-first-letter.pipe';
+import {CapitalizePipe} from '../pipes/capitalize.pipe'
 
 @Component({
     templateUrl: 'app/layout/news.html',
-    providers: [ArticleService]
+    providers: [ArticleService],
+    pipes: [TruncatePipe, CapitalizeFirstLetterPipe, CapitalizePipe]
 })
 export class NewsComponent implements OnInit{
     
@@ -26,7 +30,7 @@ export class NewsComponent implements OnInit{
     gotoNext() {        
         this.isDisabledPrevious = false;
         this.page ++;
-        this.isDisabledNext = this.page * this.limit >=10;
+        this.isDisabledNext = this.page * this.limit >=50;
         this.getNews();
     }
     gotoPrevious() {        

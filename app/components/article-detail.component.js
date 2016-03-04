@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "../service/article.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "../services/article.service", '../pipes/truncate.pipe', '../pipes/capitalize-first-letter.pipe', '../pipes/capitalize.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "../service/article.service
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, article_service_1;
+    var core_1, router_1, article_service_1, truncate_pipe_1, capitalize_first_letter_pipe_1, capitalize_pipe_1;
     var ArticleDetailComponent;
     return {
         setters:[
@@ -22,6 +22,15 @@ System.register(["angular2/core", "angular2/router", "../service/article.service
             },
             function (article_service_1_1) {
                 article_service_1 = article_service_1_1;
+            },
+            function (truncate_pipe_1_1) {
+                truncate_pipe_1 = truncate_pipe_1_1;
+            },
+            function (capitalize_first_letter_pipe_1_1) {
+                capitalize_first_letter_pipe_1 = capitalize_first_letter_pipe_1_1;
+            },
+            function (capitalize_pipe_1_1) {
+                capitalize_pipe_1 = capitalize_pipe_1_1;
             }],
         execute: function() {
             ArticleDetailComponent = (function () {
@@ -42,7 +51,8 @@ System.register(["angular2/core", "angular2/router", "../service/article.service
                     core_1.Component({
                         selector: "article-detail",
                         templateUrl: "app/layout/article-detail.html",
-                        providers: [article_service_1.ArticleService]
+                        providers: [article_service_1.ArticleService],
+                        pipes: [truncate_pipe_1.TruncatePipe, capitalize_first_letter_pipe_1.CapitalizeFirstLetterPipe, capitalize_pipe_1.CapitalizePipe]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService, router_1.RouteParams])
                 ], ArticleDetailComponent);

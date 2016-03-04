@@ -3,9 +3,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>{{article.title}}</h1>
-                        <h2 class="subheading">{{article.description}}</h2>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on {{article.created}}</span>
+                        <h1>{{article.title | capitalize}}</h1>
+                        <span class="meta">Posted by <a href="javascript:void(0)">{{article.author | capitalizeFirstLetter}}</a> on {{article.created}}</span>
                     </div>
                 </div>
             </div>
@@ -17,7 +16,7 @@
         <div class="container" *ngIf="article">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    {{article.content}}
+                    {{article.content|capitalize}}
                 </div>
             </div>
         </div>

@@ -9,7 +9,8 @@ import {ContactComponent} from './contact.component';
 @Component({
     templateUrl: 'app/layout/home.html',
     directives: [ Header, Footer,NewsComponent, RouterOutlet, ROUTER_DIRECTIVES],
-    // styleUrls: ['/bootstrap.min.css']
+    
+    // styleUrls: ['home.component.css']
 })
 @RouteConfig([
     {

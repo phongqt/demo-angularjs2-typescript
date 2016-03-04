@@ -1,5 +1,5 @@
 import {Articles} from './mock-article';
-import {Article} from '../interface/article';
+import {Article} from '../interfaces/article';
 import {Injectable} from 'angular2/core';
 
 @Injectable()
@@ -10,10 +10,20 @@ export class ArticleService {
       
     return Promise.resolve(Articles).then(function (res:Article[]) {
         var list=[];
-        res = res.sort(x=>x.id);
+        res = res.sort((n1,n2) => {
+            if (n1.id < n2.id) {
+                return 1;
+            }
+
+            if (n1.id > n2.id) {
+                return -1;
+            }
+
+            return 0;
+        });
         for (var i = ((page - 1)* limit); i <res.length; i++) {
             list.push(res[i]);
-            if (i == (limit -1)) {
+            if (i == (limit * page -1)) {
                 break;
             }
         }

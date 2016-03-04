@@ -5,5 +5,5 @@ export interface Article{
     content: string;
     created: string;
     image: string;
-    
+    author: string;    
 }

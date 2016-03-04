@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../service/article.service", 'angular2/router'], function(exports_1, context_1) {
+System.register(["angular2/core", "../services/article.service", 'angular2/router', '../pipes/truncate.pipe', '../pipes/capitalize-first-letter.pipe', '../pipes/capitalize.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../service/article.service", 'angular2/router
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, article_service_1, router_1;
+    var core_1, article_service_1, router_1, truncate_pipe_1, capitalize_first_letter_pipe_1, capitalize_pipe_1;
     var NewsComponent;
     return {
         setters:[
@@ -22,6 +22,15 @@ System.register(["angular2/core", "../service/article.service", 'angular2/router
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (truncate_pipe_1_1) {
+                truncate_pipe_1 = truncate_pipe_1_1;
+            },
+            function (capitalize_first_letter_pipe_1_1) {
+                capitalize_first_letter_pipe_1 = capitalize_first_letter_pipe_1_1;
+            },
+            function (capitalize_pipe_1_1) {
+                capitalize_pipe_1 = capitalize_pipe_1_1;
             }],
         execute: function() {
             NewsComponent = (function () {
@@ -44,7 +53,7 @@ System.register(["angular2/core", "../service/article.service", 'angular2/router
                 NewsComponent.prototype.gotoNext = function () {
                     this.isDisabledPrevious = false;
                     this.page++;
-                    this.isDisabledNext = this.page * this.limit >= 10;
+                    this.isDisabledNext = this.page * this.limit >= 50;
                     this.getNews();
                 };
                 NewsComponent.prototype.gotoPrevious = function () {
@@ -60,7 +69,8 @@ System.register(["angular2/core", "../service/article.service", 'angular2/router
                 NewsComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/layout/news.html',
-                        providers: [article_service_1.ArticleService]
+                        providers: [article_service_1.ArticleService],
+                        pipes: [truncate_pipe_1.TruncatePipe, capitalize_first_letter_pipe_1.CapitalizeFirstLetterPipe, capitalize_pipe_1.CapitalizePipe]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService, router_1.Router])
                 ], NewsComponent);
